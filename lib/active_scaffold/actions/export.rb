@@ -44,9 +44,7 @@ module ActiveScaffold::Actions
 
           # this is required if you want this to work with IE
           if request.env['HTTP_USER_AGENT'] =~ /msie/i
-            response.headers['Pragma'] = "public"
-            response.headers['Cache-Control'] = "no-cache, must-revalidate, post-check=0, pre-check=0"
-            response.headers['Expires'] = "0"
+            response.headers['Cache-Control'] = "private"
           end
 
           response.headers['Content-type'] = 'text/csv'
