@@ -47,7 +47,7 @@ module ActiveScaffold::Actions
             response.headers['Cache-Control'] = "private"
           end
 
-          response.headers['Content-type'] = 'text/csv'
+          response.headers['Content-type'] = "text/csv; charset=utf-8"
           response.headers['Content-Disposition'] = "attachment; filename=#{export_file_name}"
 
           @export_columns = export_config.columns.reject { |col| params[:export_columns][col.name.to_sym].nil? }
